@@ -29,12 +29,6 @@ class Player : public Object {
 public:
   Player() : Object("player") { Create(name_); }
   ~Player() { Delete(name_); }
-
-  Player& operator=(const Player& p) {
-    std::cout << "copy" << std::endl;
-    Player tp = p;
-    return tp;
-  }
 };
 
 

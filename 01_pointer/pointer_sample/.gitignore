@@ -1,0 +1,6 @@
+*.sdf
+*.sln
+*.suo
+*.opensdf
+*.db
+/Debug
