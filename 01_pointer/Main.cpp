@@ -16,9 +16,9 @@ void Delete(const std::string& name) { std::cout << "Delete." << name << std::en
 
 class Object {
 public:
-  Object(const std::string& n = "object") : name_(n) { Create(name_); }
-  ~Object() { Delete(name_); }
-  //virtual ~Object() { std::cout << "Delete.Object" << std::endl; }
+  Object(const std::string& n = "object") : name_(n) { Create("object"); }
+  //~Object() { Delete("object"); }
+  virtual ~Object() { Delete("object"); }
 
 protected:
   std::string name_;
@@ -74,7 +74,7 @@ int main() {
       std::unique_ptr<Object> unique_obj = std::make_unique<Object>();
 
       // std::make_unique = スマートポインタ版の new
-      unique_obj = std::unique_ptr<Enemy>();
+      unique_obj = std::unique_ptr<Object>(new Enemy());
       endl();
     }
     
