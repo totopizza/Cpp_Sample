@@ -17,6 +17,13 @@ int main() {
     }
 
     // FIXME: 多分、もっといい書き方があると思う
+    // ありました
+    auto itr = shot.begin();
+    while (itr != shot.end()) {
+      itr->update();
+      itr->destroy() ? itr = shot.erase(itr) : ++itr;
+    }
+    /*
     auto begin = shot.begin();
     auto end   = shot.end();
     for (auto it = begin; it != end; ++it) {
@@ -27,11 +34,10 @@ int main() {
         break;
       }
     }
+    */
 
     env.setupDraw();
-
     for (auto& it : shot) { it.draw(); }
-
     env.update();
   }
 }
