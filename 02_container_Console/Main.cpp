@@ -1,5 +1,5 @@
 
-#include "GameObject.h"
+#include "GameObject.hpp"
 
 
 int main() {
