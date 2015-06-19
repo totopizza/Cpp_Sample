@@ -14,6 +14,9 @@ public:
     static AppEnv s_env(common::WIDTH, common::HEIGHT, false, true);
     return s_env;
   }
+
+private:
+  Env() = default;
 };
 
 
